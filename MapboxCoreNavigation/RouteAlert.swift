@@ -69,9 +69,10 @@ public struct RouteAlert {
             }
             self.alert = .incident(incident)
         case .kTunnelEntrance:
-            guard let tunnelInfo = upcomingAlert.alert.tunnelInfo else {
+            /*guard let tunnelInfo = upcomingAlert.alert.tunnelInfo else {
                 preconditionFailure("Alert of type \(upcomingAlert.alert.type) did not contain an info data.")
-            }
+            }*/
+            let tunnelInfo = upcomingAlert.alert.tunnelInfo
             self.alert = .tunnel(Tunnel(tunnelInfo))
         case .kBorderCrossing:
             guard let adminInfo = upcomingAlert.alert.borderCrossingInfo else {
